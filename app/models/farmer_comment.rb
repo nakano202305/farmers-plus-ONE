@@ -1,0 +1,2 @@
+class FarmerComment < ApplicationRecord
+end
