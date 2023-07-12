@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/ba686ff40e.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -22,17 +22,17 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li>
-                <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
+                <%= link_to public_user_path(current_user),class: 'nav-link text-light' do %>
                   <i class="fas fa-home"></i> home
                 <% end %>
               </li>
               <li>
-                <%=  link_to users_path,class: 'nav-link text-light' do %>
+                <%=  link_to public_users_path,class: 'nav-link text-light' do %>
                   <i class="fas fa-users"></i> users
                 <% end %>
               </li>
               <li>
-                <%=  link_to farmers_path ,class: 'nav-link text-light' do %>
+                <%=  link_to public_farmers_path ,class: 'nav-link text-light' do %>
                   <i class="fas fa-book-open"></i> farmers
                 <% end %>
               </li>

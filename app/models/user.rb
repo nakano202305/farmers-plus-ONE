@@ -9,8 +9,8 @@ class User < ApplicationRecord
   
   has_one_attached :profile_image
   
-  has_many :farmers, dependent: destroy
-  has_many :farmer_comments, dependent: destroy
+  has_many :farmers, dependent: :destroy
+  has_many :farmer_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
   #to_groups
