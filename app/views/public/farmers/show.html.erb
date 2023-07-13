@@ -1,0 +1,42 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User Info</h2>
+      <%= render 'public/users/info', user: @user %>
+      <h2 class='mt-3'>New Farmer</h2>
+      <%= render 'public/farmers/form', farmer: @farmer %>
+    </div>
+
+    <div class='col-md-8 offset-md-1'>
+      <h2>Farmer Detail</h2>
+      <table class='table'>
+        <tr>
+          <td>
+            <%= link_to @farmer.user do %>
+            <%= image_tag @farmer.user.get_profile_image, size:"100x100" %><br>
+            <%= @farmer.user.name %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to @farmer.title, @farmer %>
+          </td>
+          <td>
+            <%= @farmer.body %>
+          </td>
+
+          <% if @farmer.user == current_user %>
+          <td><%= link_to 'Edit', edit_farmer_path(@farmer), class: "btn btn-sm btn-success" %></td>
+          <td><%= link_to 'Destroy', @farmer, method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-sm btn-danger" %></td>
+          <% end %>
+<% p @farmer%>
+          <td class=<%= "favorete-btn-" + @farmer.id.to_s %>><%= render 'public/farmers/btn', farmer: @farmer %></td>
+          <td>
+            <p>コメント数 : <%= @farmer.farmer_comments.count %></p>
+          </td>
+        </tr>
+      </table>
+      <div id= "comments-area"><%= render "public/farmer_comments/comment", farmer: @farmer, farmer_comment: @farmer_comment %></div>
+      <div id= "comments-area"><%= render "public/farmer_comments/comment_form", farmer: @farmer, farmer_comment: @farmer_comment %></div>
+    </div>
+  </div>
+</div>

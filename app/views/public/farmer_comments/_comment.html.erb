@@ -1,0 +1,15 @@
+<table>
+  <tbody>
+  <% farmer.farmer_comments.each do |farmer_comment| %>
+    <tr>
+      <td><%= link_to(farmer.user) do %>
+       <%= image_tag farmer_comment.user.get_profile_image, size:"100x100" %><br>
+       <%= farmer_comment.user.name %>
+      </td>
+      <% end %>
+      <td><%= farmer_comment.comment%></td>
+      <td><%= link_to "Destroy", farmer_farmer_comment_path(farmer_comment.farmer, farmer_comment), method: :delete, remote: true,class:"btn btn-danger" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

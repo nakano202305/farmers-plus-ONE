@@ -1,0 +1,15 @@
+<%= form_with model:farmer,local:true do |f| %>
+  <%= render 'layouts/errors', obj: @farmer %>
+
+  <div class="form-group">
+    <%= f.label :"NAME(農園の名前)" %>
+    <%= f.text_field :title, class: 'form-control book_title' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Itroduction(農園の紹介)" %>
+    <%= f.text_area :body, class: 'form-control book_body' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>

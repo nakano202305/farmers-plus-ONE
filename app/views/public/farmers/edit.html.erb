@@ -1,0 +1,10 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Farmer</h1>
+  		<%= render 'layouts/errors', obj: @farmer %>
+  		<%= render 'form', farmer: @farmer %>
+  		<%= link_to 'Show', @farmer %> |
+  		<%= link_to 'Back', farmers_path, class: "back" %>
+  </div>
+</div>

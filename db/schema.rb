@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2023_07_12_103607) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "book_id"
+    t.integer "farmer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

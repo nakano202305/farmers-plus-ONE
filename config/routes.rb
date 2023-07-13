@@ -7,10 +7,13 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  root to: "public/homes#top"
-  get "home/about"=>"public/homes#about",as: 'about'
+
+  scope module: :public do
+    
+    root to: "homes#top"
+    get "about"=>"homes#about"
   
-  namespace :public do
+  
     resources :farmers, only: [:index, :show, :edit, :create, :destroy, :update]do
       resource :favorites, only: [:create, :destroy]
       resources :farmer_comments, only: [:create, :destroy]
