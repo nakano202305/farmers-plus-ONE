@@ -22,8 +22,9 @@ class Public::GroupsController < ApplicationController
       redirect_to group_path
     else
       render "new"
+    end
   end
-  
+
   def edit
   end
   
