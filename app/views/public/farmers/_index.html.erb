@@ -16,7 +16,7 @@
         </td>
         <td><%= link_to farmer.title,farmer %></td>
         <td><%= farmer.body %></td>
-        <td class=<%= "favorite-btn-" + farmer.id.to_s %>><%= render 'public/farmers/btn', farmer: farmer %></td>
+        <td class="favorite-btn-<%= farmer.id %>"><%= render 'public/farmers/btn', farmer: farmer %></td>
       </tr>
     <% end %>
   </tbody>

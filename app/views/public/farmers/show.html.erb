@@ -29,7 +29,7 @@
           <td><%= link_to 'Destroy', @farmer, method: :delete, data: { confirm: "本当に消しますか？" }, class: "btn btn-sm btn-danger" %></td>
           <% end %>
 
-          <td class=<%= "favorete-btn-" + @farmer.id.to_s %>><%= render 'public/farmers/btn', farmer: @farmer %></td>
+          <td class="favorite-btn-<%= @farmer.id %>"><%= render 'public/farmers/btn', farmer: @farmer %></td>
           <td>
             <p>コメント数 : <%= @farmer.farmer_comments.count %></p>
           </td>
