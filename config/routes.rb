@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       #get 'followings' => 'relationships#followings', as: 'followings'
       #get 'followers' => 'relationships#followers', as: 'followers'
   
-    resources :groups, except: [:destroy] do
+    resources :groups, only:  [:new, :index, :show, :create, :edit, :update] do
       resource :group_users, only: [:create, :destroy]
     end
     resources :group_users, only: [:edit, :update]

@@ -1,5 +1,6 @@
 class Public::FarmerCommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:destroy]
 
   def create
     farmer = Farmer.find(params[:farmer_id])
@@ -26,7 +27,10 @@ class Public::FarmerCommentsController < ApplicationController
   end
 
   def ensure_correct_user
-
+    @farmer_comment = FarmerComment.find_by(id: params[:id], farmer_id: params[:farmer_id])
+    if @farmer_comment.user != current_user
+      redirect_to root_path
+    end
   end
 
 end

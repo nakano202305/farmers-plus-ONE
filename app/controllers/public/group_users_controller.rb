@@ -2,7 +2,7 @@ class Public::GroupUsersController < ApplicationController
   before_action :authenticate_user!
   
   def create
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:group_id])
     current_user.join_group(@group)
     redirect_back(fallback_location: root_url)
   end

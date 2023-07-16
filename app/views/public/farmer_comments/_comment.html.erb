@@ -8,7 +8,9 @@
       </td>
       <% end %>
       <td><%= farmer_comment.comment%></td>
-      <td><%= link_to "Destroy", farmer_farmer_comment_path(farmer_comment.farmer, farmer_comment), method: :delete, remote: true,class:"btn btn-danger" %></td>
+      <% if farmer_comment.user == current_user %>
+        <td><%= link_to "Destroy", farmer_farmer_comment_path(farmer_comment.farmer, farmer_comment), method: :delete, remote: true,class:"btn btn-danger" %></td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>
