@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-   before_action :authenticate_user!,except: [:top, :about]
+   #before_action :authenticate_user!,except: [:top, :about]
    before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
       when Admin
-        admins_home_path
+        admin_path
       when User
         user_path(current_user)
     end
