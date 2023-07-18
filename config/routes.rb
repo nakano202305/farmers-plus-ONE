@@ -42,12 +42,15 @@ Rails.application.routes.draw do
   namespace :admin do
 
     get '/'=>'homes#top'
-  
-    resources :users, only: [:show, :destroy]
-    resources :farmers, only: [:index, :show, :destroy]
+
+    resources :users, only: [:destroy]
+    resources :farmers, only: [:index, :show, :destroy]do
+      resources :farmer_comments, only: [:destroy]
+    end
     resources :groups, only: [:index, :destroy]
-  
+    
+
   end
-  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
