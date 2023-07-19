@@ -36,4 +36,8 @@ class User < ApplicationRecord
     self.join_groups.include?(group)
   end
   
+  def self.search(keyword)
+    where("name LIKE ?", "%#{keyword}%")
+  end
+  
 end

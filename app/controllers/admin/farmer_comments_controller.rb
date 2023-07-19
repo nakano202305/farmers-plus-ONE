@@ -1,4 +1,5 @@
 class Admin::FarmerCommentsController < ApplicationController
+  before_action :authenticate_admin!
 
   def destroy
     @farmer = Farmer.find(params[:farmer_id])

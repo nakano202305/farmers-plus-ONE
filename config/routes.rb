@@ -12,17 +12,14 @@ Rails.application.routes.draw do
 
     root to: "homes#top"
     get "about"=>"homes#about"
-
+    get 'search' => 'searches#search'
 
     resources :farmers, only: [:index, :show, :edit, :create, :destroy, :update]do
       resource :favorites, only: [:create, :destroy]
       resources :farmer_comments, only: [:create, :destroy]
     end
 
-    resources :users, only: [:index, :show, :edit, :update]#do
-      #resource :relationships, only: [:create, :destroy]
-      #get 'followings' => 'relationships#followings', as: 'followings'
-      #get 'followers' => 'relationships#followers', as: 'followers'
+    resources :users, only: [:index, :show, :edit, :update, :create, :destroy]
 
     resources :groups, only:  [:new, :index, :show, :create, :edit, :update] do
       resource :group_users, only: [:create, :destroy]

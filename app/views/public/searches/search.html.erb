@@ -1,0 +1,9 @@
+<% if @key == 'users' %>
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+<% elsif @key == 'farmers' %>
+  <% @farmers.each do |farmer| %>
+    <%= farmer.title %>
+  <% end %>
+<% end %>

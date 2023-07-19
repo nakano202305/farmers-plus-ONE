@@ -13,5 +13,9 @@ class Farmer < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
-
+  
+  def self.search(keyword)
+    where("title LIKE ?", "%#{keyword}%")
+  end
+  
 end
