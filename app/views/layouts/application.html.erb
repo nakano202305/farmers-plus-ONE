@@ -70,7 +70,7 @@
                 <%= f.search_field :search, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
                 <% if @users.present? %>
                   <%= f.hidden_field :key, value: 'users' %>
-                <% elsif @farmers.present? %>  
+                <% elsif @farmers.present? %>
                   <%= f.hidden_field :key, value: 'farmers' %>
                 <% end %>
                 <%= f.submit "Search", class: "btn btn-outline-success", type: "submit" %>
@@ -92,10 +92,15 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
+                <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
                   <i class="fas fa-sign-in-alt"></i> login
                 <% end %>
               </li>
+              <li>
+                <%= link_to users_guest_sign_in_path, method: :post, class: 'nav-link text-light' do %>
+                  <i class="fas fa-user"></i>ゲストログイン
+                <% end %>
+             </li>
             <% end %>
             </ul>
           </div>

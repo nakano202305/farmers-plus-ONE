@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     resources :group_users, only: [:edit, :update]
   end
 
+  # ゲストログイン
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
+  end
+
 
   # 管理者用
   # URL /admin/sign_in ...
@@ -45,7 +50,7 @@ Rails.application.routes.draw do
       resources :farmer_comments, only: [:destroy]
     end
     resources :groups, only: [:index, :destroy]
-    
+
 
   end
 
