@@ -5,6 +5,7 @@ class Public::GroupsController < ApplicationController
   def index
     @farmer = Farmer.new
     @groups = Group.all
+    
   end
 
   def show
@@ -19,7 +20,8 @@ class Public::GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.user_id = current_user.id
-    if @group.save
+  
+    if @group.save!
       redirect_to groups_path
     else
       render "new"

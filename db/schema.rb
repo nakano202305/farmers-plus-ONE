@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_20_095256) do
+ActiveRecord::Schema.define(version: 2023_07_12_103607) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,11 +52,6 @@ ActiveRecord::Schema.define(version: 2023_07_20_095256) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "end_users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "farmer_comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "farmer_id"
@@ -95,8 +90,7 @@ ActiveRecord::Schema.define(version: 2023_07_20_095256) do
     t.integer "farmer_id"
     t.string "name"
     t.text "introduction"
-    t.string "prefecture"
-    t.boolean "is_positioning", default: false
+    t.integer "prefecture", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

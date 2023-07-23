@@ -5,9 +5,8 @@ class CreateGroups < ActiveRecord::Migration[6.1]
       t.integer :farmer_id
       t.string :name
       t.text :introduction
-      t.string :prefecture
-      t.boolean :is_positioning, default: false
-      
+      t.integer :prefecture, null: false, default: 0
+
       t.timestamps
     end
   end
