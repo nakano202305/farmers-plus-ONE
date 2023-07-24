@@ -1,3 +1,16 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top {
+height: 1100px;
+background-image: image-url("leaf_large.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top center;
+}
+
+.about {
+height: 1100px;
+background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}

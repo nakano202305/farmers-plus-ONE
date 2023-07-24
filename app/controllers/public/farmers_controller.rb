@@ -42,7 +42,7 @@ class Public::FarmersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @farmer = Farmer.find(params[:id])
     @farmer.destroy
     redirect_to farmers_path
