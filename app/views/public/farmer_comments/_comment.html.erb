@@ -3,7 +3,7 @@
   <% farmer.farmer_comments.each do |farmer_comment| %>
     <tr>
       <td><%= link_to(farmer_comment.user) do %>
-       <%= image_tag farmer_comment.user.get_profile_image, size:"100x100" %><br>
+       <%= image_tag farmer_comment.user.get_profile_image, size:"70x70" %><br>
        <%= farmer_comment.user.name %>
       </td>
       <% end %>
