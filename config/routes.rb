@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     get 'search' => 'searches#search'
 
     resources :farmers, only: [:index, :show, :edit, :create, :destroy, :update]do
+      collection do
+        get :favorite_farmers
+      end
       resource :favorites, only: [:create, :destroy]
       resources :farmer_comments, only: [:create, :destroy]
     end

@@ -8,6 +8,10 @@
 	  <th>Introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <tr>
+	  <th>Favorite</th>
+	  <th><%= link_to "favorite",favorite_farmers_farmers_path %></th>
+  </tr>
 </table>
 
 <% if user.email !="guest@example.com" %>

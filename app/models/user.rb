@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :farmers, dependent: :destroy
   has_many :farmer_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_farmers, through: :favorites, source: :farmer
 
   #to_groups
   has_many :groups

@@ -48,6 +48,10 @@ class Public::FarmersController < ApplicationController
     redirect_to farmers_path
   end
 
+  def favorite_farmers
+    @farmers = current_user.favorite_farmers
+  end  
+
 
   private
 
