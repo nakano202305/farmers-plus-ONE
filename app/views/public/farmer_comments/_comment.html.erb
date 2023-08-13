@@ -2,7 +2,7 @@
   <tbody>
   <% farmer.farmer_comments.each do |farmer_comment| %>
     <tr>
-      <td><%= link_to(farmer.user) do %>
+      <td><%= link_to(farmer_comment.user) do %>
        <%= image_tag farmer_comment.user.get_profile_image, size:"100x100" %><br>
        <%= farmer_comment.user.name %>
       </td>

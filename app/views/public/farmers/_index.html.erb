@@ -11,7 +11,7 @@
     <% farmers.each do |farmer| %>
       <tr>
         <td><%= link_to user_path(farmer.user) do %>
-          <%= image_tag farmer.user.get_profile_image, size:'50x50' %>
+          <%= image_tag farmer.user.get_profile_image, size:'70x70' %>
           <% end %>
         </td>
         <td><%= link_to farmer.title,farmer %></td>
